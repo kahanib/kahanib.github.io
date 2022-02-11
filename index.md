@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+I like trading coding and mostyl learning new things.
 
-Maybe say a some things about yourself.
+And really enjoying challenge 
 
-Or maybe what you plan to blog about.
+
