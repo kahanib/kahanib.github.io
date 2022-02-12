@@ -30,3 +30,7 @@ ForEach ($thing in $things) {
     Write-Output "It highlights it using the GitHub style"
 }
 ```
+# Now lets try to add an image
+
+
+![Book logo](/kahanib/kahanib.github.io/blob/main/images/01-5_and_30Mpct_change.png)
