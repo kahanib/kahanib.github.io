@@ -33,4 +33,4 @@ ForEach ($thing in $things) {
 # Now lets try to add an image
 
 
-![2H vs 30M](/kahanib/kahanib.github.io/blob/main/images/01-5_and_30Mpct_change.png)
+![2H vs 30M](/github.com/kahanib/kahanib.github.io/blob/main/images/01-5_and_30Mpct_change.png)
