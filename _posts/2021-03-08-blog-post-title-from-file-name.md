@@ -30,7 +30,7 @@ ForEach ($thing in $things) {
     Write-Output "It highlights it using the GitHub style"
 }
 ```
-# Now lets try to add an image
+# Now lets try to add an image..
 
 
-![2H vs 30M](/blob/main/images/01-5_and_30Mpct_change.png)
+![2H vs 30M](/images/01-5_and_30Mpct_change.png)
