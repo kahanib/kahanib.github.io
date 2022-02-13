@@ -101,7 +101,11 @@ Bollinger             |  Moving Average Cross
 :-------------------------:|:-------------------------:
 ![](/images/bollinger_hist_pct_change.png)  |  ![](/images/ma_hist_pct_change.png)
 
+Another factor that is important to look at is the 
 
+Bollinger             |  Moving Average Cross
+:-------------------------:|:-------------------------:
+![](/images/1_dollar_invested_bollinger.png)  |  ![](/images/1_dollar_invested_ma.png)
 
  
 
