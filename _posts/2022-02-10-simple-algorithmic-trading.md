@@ -50,7 +50,7 @@ Black triangel - Open position (up is Buy, down is Sell)
 Red triangle is a closed position in a loss, green is closed position in a gain. 
 
 ![30M with MA trades for 2022](/images/a_30m_ma_25_50_for_2022.png)
-We can clearly see what we tought earlier, we our bot will make lots of small losing trades when the market go sideways and profit in when the market trending.
+We can clearly see what we tought earlier, our bot will make lots of small losing trades when the market go sideways and profit in when the market trending.
 
 We can also zoom in to look on the trading logic:
 ![30M MA for Jan 19 to 25, 2022](/images/a_30m_ma_25_50_jan_19_to_25_2022.png)
