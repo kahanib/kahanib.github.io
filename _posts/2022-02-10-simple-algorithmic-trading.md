@@ -49,12 +49,25 @@ Now lets run the backtest and look on an example:
 Black triangel - Open position (up is Buy, down is Sell)
 Red triangle is a closed position in a loss, green is closed position in a gain. 
 
-![30M with trades for 2022](/images/a_30m_ma_25_50_for_2022.png)
+![30M with MA trades for 2022](/images/a_30m_ma_25_50_for_2022.png)
 We can clearly see what we tought earlier, we our bot will make lots of small losing trades when the market go sideways and profit in when the market trending.
 
 We can also zoom in to look on the trading logic:
-![30M for Jan 19 to 25, 2022](/images/a_30m_ma_25_50_jan_19_to_25_2022.png)
+![30M MA for Jan 19 to 25, 2022](/images/a_30m_ma_25_50_jan_19_to_25_2022.png)
 
+
+### Another Strategy
+Since our bot loss money in market that gos sideways and I have feeling that BTC/USD is moveing more sideways. I will add another strategy to our backtest. 
+Since we already have a strategy to catch trends lets try to find a strategy that works better in a sideways market (and remember we want to keep it simaple):
+How about Bollinger Bands, the *trading logic* will be:
+Buy onc the price cross above the moving average after tuching the lower bands, exit once price tuch the upper bands.  
+Sell once the prce cross under the moving average after tuching the upper bands, exit once price tuch the lower bands.  
+
+Here is our Bollinger strategy for 2022:
+![30M with bollinger trades for 2022](/images/30m_bollinger_100.png)
+
+And lets focus in too clearly see trades:
+![30M  bollinger for Jan 19 to 25, 2022](/images/a_30m_bollinger_100_jan_19_to_25_2022.png)
 
 
 
