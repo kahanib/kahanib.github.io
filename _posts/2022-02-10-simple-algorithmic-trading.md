@@ -26,6 +26,7 @@ Our trading strategy will be base on trend following. The bot will probably have
 ### Data
 cryptodatadownload (https://www.cryptodatadownload.com/data/binance/) is a good resurses, they have data sets for the main crypto coines which incloud Daily, Hourly and minuts
 I am using the one minuts data set. I have download it in a CSV format and than clean it with Python. I have also upload a jupyter notebook with code I am usign in the following link:
+For the 5 minutes time frame the first data point is Speptember 9, 2019 and the last is: Feb 7, 2022. containig  252,963 data points (30 minuts we have 42,165 data points and 10,548 for the 2 hours).
 
 ### Parameters
 There are many parmaeters we can play with, lets focus on the main one. We will use two moving average, fast and slow, so we need to decide about that. Also we need to decide about time frame...i.g how often do we want our bot to check the price.
@@ -40,6 +41,10 @@ In this blog I will play with three different time frames:
 Will run test on all the three time frames seperatly and analyse the result.
 
 Another parmeter our trading bot need is the moving averags (fast and slow). The same logic applies here, bigger moving average mean less sensativity to price movment; our bot will be slower to react, but will have less noise. Lets try two different sets, one with fast=25, slow=50 and another with fast=250, slow=500.
-Again the possabilits (of numbers combinations) are endless, so I will just pick tow and see how its going.
+Again the possabilits (numbers of combinations) are endless, so I will just pick tow and see how its going.
 
 
+### What next
+I will deply the bot to the cloud and let it run live for maybe a week. 
+Than, I will write another blog with the result, see if there are any improvemnts to make and run it again. 
+Once I have some time I am planing to build a dashbord for anyone to see the result live.
