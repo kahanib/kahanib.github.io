@@ -8,7 +8,7 @@ I will save my thoughts on why some suceed and some do not for another blog post
 
 ### Why use the bot to trade crypto?
 Well, I am not a heavy crypto trader, my backround is more in traditional assets but, I think that trading bots have an advantage in trading crypto over stocks. 
-1. The crypto market is open 24/7, as a human trader this could drive me insane. 2. It's emotionally hard to trade in a market that can move at any given time, even on the weekend.  For a bot it doesn't matter, it's even an advantage. Why? Because we know that if we put a stop at X, we'll be out at X, and not X minus 100. On the other hand, when trading stocks we can wake up with a gap down and be out in a much bigger dent to our capital than originaly planned. 
+1. The crypto market is open 24/7, as a human trader this could drive me insane. It's emotionally hard to trade in a market that can move at any given time, even on the weekend.  For a bot it doesn't matter, it's even an advantage. Why? Because we know that if we put a stop at X, we'll be out at X, and not X minus 100. On the other hand, when trading stocks we can wake up with a gap down and be out in a much bigger dent to our capital than originaly planned. 
 3. Another advantage is that a lot of crypto exchanges have a nice and simple API and we don't need much margin or maintenance capital to try our bot live. We can simply trade live without much risk comparing to let's say the future market which is also a good candidate for algorithmic trading bots.
 
 ### Trading Logic
@@ -16,24 +16,24 @@ As mentioned above, I am thinking of writing another blog post that will focus m
 For now, the idea is to focus on simplicity, but we still want our bot to have positive PnL. 
 The trading strategy will be very simple (using two moving averages, fast and slow).
 1. Buy (long): when the market crosses above the fast moving average (fast MA), if the slow moving average (slow MA) is under the fast MA, use the slow MA as trailing stop.
-2. Sell (short): When the market break down (cross under) the fast MA giving that the slow MA is above the Fast MA. Use the slow MA as a trailing stop. 
+2. Sell (short): When the market break down (cross under) the fast MA giving that the slow MA is above the Fast MA. Use the slow MA as a trailing stop.   
 In addition, we may use a limit (take profit) on both trading directions. For now we'll leave this part (limit) for later, perhaps we'll use it, perhaps not, we'll see.
 Our trading strategy will be based on trend following. The bot will probably have profitable trades when the market is trending, and lose money by taking lots of small losses when the market moves sideways. 
 *If the trading logic is not clear, just look on the charts showing the trades down the road of this blog.
 
-![2H vs 30M](/images/01-5_and_30Mpct_change.png)
 
 ### Data
 Cryptodatadownload (https://www.cryptodatadownload.com/data/binance/) is a good resource. They have data sets for the main crypto coins which include, Daily, Hourly and Minutes.
-I am using the One Minute data set. I have downloaded it in a CSV format and then cleaned it with Python. I have also uploaded a jupyter notebook with code I am usign in the following link:????
-For the 5 Minutes time frame, the first data point is September 9, 2019 and the last data point is: Feb 7, 2022. This contais  252,963 data points (for 30 minutes we have 42,165 data points, and 10,548 for the 2 hours).
+I am using the One Minute data set. I have downloaded it in a CSV format and then cleaned it with Python. I have also uploaded a jupyter notebook with code I am usign in the following link:
+For the 5 Minutes time frame, the first data point is September 9, 2019 and the last data point is: Feb 7, 2022. This contais 252,963 data points (for 30 minutes we have 42,165 data points, and 10,548 for the 2 hours).
 
 ### Parameters
 There are many parmaeters we can play with, let's focus on the main one: we will use two moving averages, fast and slow. So we need to decide on this. Also we need to decide about time frame, for example how often do we want our bot to check the price?
 
 What to consider when chosing time frames.
 As we can logicaly assume, and can see in the charts below, as the time frame is bigger, the percent changes from one point to another would likely get bigger. By using 30 minutes instead of 5 minute time frames we give the market more time to move, therefore allowing for greater price moves. The advantage is that bigger time frames mean less noise, but could also mean that the market has more time (and room) to move against us before our bot checks the price and makes a decision.
-In this blog I will play with three different time frames:
+![2H vs 30M](/images/01-5_and_30Mpct_change.png)
+I will play with three different time frames:
 - 5 Minutes
 - 30 Minutes 
 - 2 Hours
@@ -41,26 +41,25 @@ In this blog I will play with three different time frames:
 We'll run tests on all three time frames seperately and analyse the results.
 
 Another parameter our trading bot needs is moving averages (fast and slow). The same logic applies here, bigger moving averages mean less sensitivity to price movement. Our bot will be slower to react, but we'lll have less noise. Let's try two different sets: one with fast=25 and with slow=50, and another with fast=250 and slow=500.
-Again the possibilities (numbers of combinations) are endless, so I will just pick twe and see how it plays out.
+Again the possibilities (numbers of combinations) are endless, so I will just pick two and see how it plays out.
 
 
-Now let's run the backtest and look on an example:
-Black triangle - Open position (up is Buy, down is Sell)
+Now let's run the backtest and look on an example:  
+Black triangle - Open position (up is Buy, down is Sell)  
 Red triangle - Closed position is a loss, green is closed position in a gain. 
-
 ![30M with MA trades for 2022](/images/a_30m_ma_25_50_for_2022.png)
-We can clearly see what we thought earlier, that our bot will make lots of small losing trades when the market goes sideways and profit when the market is trending.
+We can clearly see what as we thought earlier, our bot will make lots of small losing trades when the market goes sideways and profit when the market is trending.
 
 We can also zoom in to look on the trading logic:
 ![30M MA for Jan 19 to 25, 2022](/images/a_30m_ma_25_50_jan_19_to_25_2022.png)
 
 
 ### Another Strategy
-Since our bot loses money when market goes sideways (and I have feeling that BTC/USD is moving more sideways) I will add another strategy to our backtest. 
-As we already have a strategy to catch trends let's try to find a strategy that works better in a sideways market (remember, we want to keep it simple!):
-How about Bollinger Bands, the *trading logic* will be:
-Buy on the price cross above the moving average after touching the lower bands, exit once price touches the upper bands.  
-Sell once the price crosses under the moving average after touching the upper bands, exit once price touches the lower bands.  
+Since our bot loses money when market goes sideways (and I have a feeling that BTC/USD moving sideways alot on time frame of 5 minuts) I will add another strategy to backtest. 
+Aince we already have a strategy to catch trends let's try to find a strategy that works better in a sideways market (remember, we want to keep it simple!):
+How about Bollinger Bands, the *trading logic* will be:  
+Buy when the price cross above the moving average after touching the lower bands, exit once price touches the upper bands (limit) or lower bands (stop).    
+Sell (short) once the price crosses under the moving average after touching the upper bands, exit once price touches the lower bands (limit) upper bands (stop).  
 
 Here is our Bollinger strategy for 2022:
 ![30M with bollinger trades for 2022](/images/30m_bollinger_100.png)
@@ -92,40 +91,41 @@ After runing all our strategies on the different time frames, we get:
 
 After sorting by gains for every $1 investment, we'll focus on the top three results.  
 The MA 250 500 2H	(moving average, fast: 250, slow: 500) for a 2 hour time frame, traded only 33 times, so we'll leave it out for now.  
-We have two strategies, one that uses MA, and another that uses Bollinger. It's interesting too see that the MA strategy wins only 21.21% of the times, but when it wins, it wins big. On the other hand, the Bollinger strategy wins 64.01% of the time, but with an average gain of 2.7% per trade, and loss of -3.95% per trade. 
+We have two strategies, one that uses MA, and another that uses Bollinger. It's interesting too see that the MA strategy wins only 28.21% of the times, but when it wins, it wins big. On the other hand, the Bollinger strategy wins 64.01% of the time, but with an average gain of 2.7% per trade, and loss of -3.95% per trade. 
 
-So the two strategies are quite the opposite; one trades lots of losers for small loss and big gains. The other trades lots of winners for small gains and bigger losess. I usually prefer visualisation (charts) over dry numbers. 
+So the two strategies are quite the opposite; one trades lots of losers for small loss and big gains. The other trades lots of winners for small gains and bigger losess. I usually prefer visualisation (charts) over dry numbers. Start with histogram of all Pnl as percentages.
 
 Bollinger             |  Moving Average Cross
 :-------------------------:|:-------------------------:
 ![](/images/bollinger_hist_pct_change.png)  |  ![](/images/ma_hist_pct_change.png)
 
-I definitely like the MA cross historgam better. There is something to work with and no one ever blew up an account and went out of business from accumulating small losses.
+I definitely like the MA cross historgam better. There is something to work with and usually no one ever blew up an account and went out of business from accumulating small losses.
+Another interesting chart is the compound PnL in percentage (or how much will you make on investing $1)
+for example here is the MA strategy for 2022:
+![Return Over $1 invested in 2022](/images/1_dollar_invested_ma_2022.png)
 
-
-
+Now, compare both strategies:
 Bollinger             |  Moving Average Cross
 :-------------------------:|:-------------------------:
 ![](/images/1_dollar_invested_bollinger.png)  |  ![](/images/1_dollar_invested_ma.png)
 
-Both strategies have times of big loss, Bollinger at the beginning of 2021, and MA at the last quarter of 2020. Further investigation can help us find a way to try and avoid some trades. 
+Both strategies have times of big loss, Bollinger at the beginning of 2021, and MA at the last half of 2020. Further investigation can help us find a way to try and avoid some trades.  
 
-
-I also like to look on box charts. What I plot here is the maximum gain and loss that the position was at the in the final result of the trade. 
+I also like to look on box charts. What I plot here is the maximum gain and loss that the position was at and the final result of the trade. 
 ![MA trades as box for 2019](/images/ma_box_2019.png)
 
-Now let's compare both strategies for 2020 trades
+Now let's look at both strategies for 2020 trades
 Bollinger             |  Moving Average Cross
 :-------------------------:|:-------------------------:
-![](/images/bollinger_box_2020.png)  |  ![](/images/ma_box_2020.png)  
+![](/images/bollinger_box_2020.png)  |  ![](/images/ma_box_2020.png)
 
-Looking at the charts, my feeling is that I should go with the MA strategy because there is a lot of room for improvement. I should also test with a limit order of 2x or 3x (meaning if I risk a dollar exit if the profit is 2) as we can see lots of black tail to the upside. 
+Looking at the charts, my feeling is that I should go with the MA strategy because there is a lot of room for improvement. I should also test with a limit order of 2x or 3x (meaning if I risk $1, exit if the profit is $2 or $3) as we can see lots of black tail to the upside. 
 I also think that with a 28.21% success rate, there is much room to improve. We just need to find another parameter that will say when NOT to trade (perhaps a future post).
 
 
 ### What's next
-I will deploy the bot to the cloud and let it run live for maybe a week.  
-Then, I will write another blog post with the result, noting if there are any improvements to make, and run it again.  
+I will deploy the bot to the cloud and let it run live for maybe a week or two.  
+Then, I will write another post with the result, noting if there are any improvements to make, and run it again.  
 Once I have more time, I am planning to build a dashboard for anyone to see the result live.
 
 Stay tuned.
