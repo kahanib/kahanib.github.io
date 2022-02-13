@@ -101,13 +101,20 @@ Bollinger             |  Moving Average Cross
 :-------------------------:|:-------------------------:
 ![](/images/bollinger_hist_pct_change.png)  |  ![](/images/ma_hist_pct_change.png)
 
-Another factor that is important to look at is the 
+I defently like the MA cross historgam better. There is what to work with and no one ever bloww up an account and went out of businss from accoumulationg small loss.
+
+
 
 Bollinger             |  Moving Average Cross
 :-------------------------:|:-------------------------:
 ![](/images/1_dollar_invested_bollinger.png)  |  ![](/images/1_dollar_invested_ma.png)
 
- 
+Both strategiyes have times of big loss, bollinger at the begening of 2021 and MA at the last part of 2020. forther invastigation can help us find a way to try and avoide some trades. 
+
+
+I also like to look on box chart. What I plot here is the maximum gain and loss the poition was at the the final result of the trade 
+![MA trades as box for 2019](/images/ma_box_2019.png)
+
 Looking at the charts my feelings is that I should go with the MA strategy. There is a lot of room to improve. I should test with a limit order of 2x or 3x  (meaning if I risk a dollar exit if the profit is 2) as we can see lots of black tail to the upsie. 
 I also think that with 28.21% seccess rate there is much room to improve. Just need to find another parameter that will say when NOT to trade (maybe a future post)
 
