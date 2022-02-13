@@ -20,6 +20,7 @@ Buy (Long) when the market cross above the fast moving average (fast MA) if the 
 Sell (short): When the market break down (cross under) the fast MA giving that the slow MA is above the Fast MA. Use the slow MA as a trailing stop. 
 In addition, we may use a limit (take profit) on boh trading directoin. But, for now will leave this part (limit) for latte, maybe will useit maybe not, will see.
 Our trading strategy will be base on trend following. The bot will probably have profitable trades when the market is trending, and loss money by takign losts of small loss when the market jsut move sideways. 
+*If the trading logic is not clear just look on the charts showing the trads down the road of thos blog
 
 ![2H vs 30M](/images/01-5_and_30Mpct_change.png)
 
@@ -42,6 +43,22 @@ Will run test on all the three time frames seperatly and analyse the result.
 
 Another parmeter our trading bot need is the moving averags (fast and slow). The same logic applies here, bigger moving average mean less sensativity to price movment; our bot will be slower to react, but will have less noise. Lets try two different sets, one with fast=25, slow=50 and another with fast=250, slow=500.
 Again the possabilits (numbers of combinations) are endless, so I will just pick tow and see how its going.
+
+
+Now lets run the backtest and look on an example:
+Black triangel - Open position (up is Buy, down is Sell)
+Red triangle is a closed position in a loss, green is closed position in a gain. 
+
+![30M with trades for 2022](/images/a_30m_ma_25_50_for_2022.png
+
+We can clearly see what we tought earlier, we our bot will make lots of small losing trades when the market go sideways and profit in when the market trending.
+
+We can also zoom in to look on the trading logic:
+
+![30M for Jan 19 to 25, 2022](/images/a_30m_ma_25_50_jan_19_to_25_2022.png)
+
+
+
 
 
 ### What next
