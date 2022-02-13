@@ -108,7 +108,8 @@ Bollinger             |  Moving Average Cross
 ![](/images/1_dollar_invested_bollinger.png)  |  ![](/images/1_dollar_invested_ma.png)
 
  
-
+Looking at the charts my feelings is that I should go with the MA strategy. There is a lot of room to improve. I should test with a limit order of 2x or 3x  (meaning if I risk a dollar exit if the profit is 2) as we can see lots of black tail to the upsie. 
+I also think that with 28.21% seccess rate there is much room to improve. Just need to find another parameter that will say when NOT to trade (maybe a future post)
 
 And here is the MA strategy if we started in 2022: (made 15 cent on the dollar)
 
@@ -120,5 +121,4 @@ I will deply the bot to the cloud and let it run live for maybe a week.
 Than, I will write another blog with the result, see if there are any improvemnts to make and run it again.  
 Once I have some time I am planing to build a dashbord for anyone to see the result live.
 
-There is alos 
 Stay tund.
