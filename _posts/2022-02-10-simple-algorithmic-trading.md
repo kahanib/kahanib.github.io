@@ -115,7 +115,12 @@ Both strategiyes have times of big loss, bollinger at the begening of 2021 and M
 I also like to look on box chart. What I plot here is the maximum gain and loss the poition was at the the final result of the trade 
 ![MA trades as box for 2019](/images/ma_box_2019.png)
 
-Looking at the charts my feelings is that I should go with the MA strategy. There is a lot of room to improve. I should test with a limit order of 2x or 3x  (meaning if I risk a dollar exit if the profit is 2) as we can see lots of black tail to the upsie. 
+Now lets compare both strategies for 2020 trades
+Bollinger             |  Moving Average Cross
+:-------------------------:|:-------------------------:
+![](/images/bollinger_box_2020.png)  |  ![](/images/ma_box_2020.png)  
+
+Looking at the charts my feelings is that I should go with the MA strategy. There is a lot of room for improvment. I should alos test with a limit order of 2x or 3x (meaning if I risk a dollar exit if the profit is 2) as we can see lots of black tail to the upsie. 
 I also think that with 28.21% seccess rate there is much room to improve. Just need to find another parameter that will say when NOT to trade (maybe a future post)
 
 And here is the MA strategy if we started in 2022: (made 15 cent on the dollar)
