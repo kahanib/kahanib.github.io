@@ -45,6 +45,6 @@ Again the possabilits (numbers of combinations) are endless, so I will just pick
 
 
 ### What next
-I will deply the bot to the cloud and let it run live for maybe a week. 
-Than, I will write another blog with the result, see if there are any improvemnts to make and run it again. 
+I will deply the bot to the cloud and let it run live for maybe a week.  
+Than, I will write another blog with the result, see if there are any improvemnts to make and run it again.  
 Once I have some time I am planing to build a dashbord for anyone to see the result live.
