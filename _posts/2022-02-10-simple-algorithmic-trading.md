@@ -123,9 +123,6 @@ Bollinger             |  Moving Average Cross
 Looking at the charts my feelings is that I should go with the MA strategy. There is a lot of room for improvment. I should alos test with a limit order of 2x or 3x (meaning if I risk a dollar exit if the profit is 2) as we can see lots of black tail to the upsie. 
 I also think that with 28.21% seccess rate there is much room to improve. Just need to find another parameter that will say when NOT to trade (maybe a future post)
 
-And here is the MA strategy if we started in 2022: (made 15 cent on the dollar)
-
-
 
 
 ### What next
