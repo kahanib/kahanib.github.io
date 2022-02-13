@@ -124,7 +124,6 @@ Looking at the charts my feelings is that I should go with the MA strategy. Ther
 I also think that with 28.21% seccess rate there is much room to improve. Just need to find another parameter that will say when NOT to trade (maybe a future post)
 
 
-
 ### What next
 I will deply the bot to the cloud and let it run live for maybe a week.  
 Than, I will write another blog with the result, see if there are any improvemnts to make and run it again.  
