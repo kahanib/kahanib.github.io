@@ -24,7 +24,7 @@ Our trading strategy will be based on trend following. The bot will probably hav
 
 ### Data
 Cryptodatadownload (https://www.cryptodatadownload.com/data/binance/) is a good resource. They have data sets for the main crypto coins which include, Daily, Hourly and Minutes.
-I am using the One Minute data set. I have downloaded it in a CSV format and then cleaned it with Python. I have also uploaded a jupyter notebook with code I am usign in the following link:
+I am using the One Minute data set. I have downloaded it in a CSV format and then cleaned it with Python.
 For the 5 Minutes time frame, the first data point is September 9, 2019 and the last data point is: Feb 7, 2022. This contais 252,963 data points (for 30 minutes we have 42,165 data points, and 10,548 for the 2 hours).
 
 ### Parameters
