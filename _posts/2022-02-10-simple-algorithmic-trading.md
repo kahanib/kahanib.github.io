@@ -105,9 +105,11 @@ for example here is the MA strategy for 2022:
 ![Return Over $1 invested in 2022](/images/1_dollar_invested_ma_2022.png)
 
 Now, compare both strategies:
-Bollinger             |  Moving Average Cross
-:-------------------------:|:-------------------------:
-![](/images/1_dollar_invested_bollinger.png)  |  ![](/images/1_dollar_invested_ma.png)
+Bollinger: 
+![](/images/1_dollar_invested_bollinger.png)
+
+Moving Average Cross:
+![](/images/1_dollar_invested_ma.png)
 
 Both strategies have times of big loss, Bollinger at the beginning of 2021, and MA at the last half of 2020. Further investigation can help us find a way to try and avoid some trades.  
 
