@@ -70,9 +70,51 @@ And lets focus in too clearly see trades:
 ![30M  bollinger for Jan 19 to 25, 2022](/images/a_30m_bollinger_100_jan_19_to_25_2022.png)
 
 
+So for the Bollinger strategy will use 100 and 500 for the moving avergae (to calculate the bollinger bands) and use the default multiplier of 2 for the standard deviation.  
+
+
+## The result
+After runing all our strategy on the different tiem frame we get:
+
+|	Strategy	|	PnL (in points)	|	Pnl percent mean	|	Return on $1	|	Wining percentage	|	Average % gain per trade	|	Average % loss per trade	|	Number of trades
+|	:---: 	|	:---: 	|	:---: 	|	:---: 	|	:---: 	|	:---: 	|	:---: 	|	:---: 
+|	MA 25&50 2H	|	44,692	|	0.64%	|	3.16	|	28.21%	|	6.5%	|	-1.65%	|	234
+|	MA 250 500 2H	|	41,935	|	4.45%	|	2.89	|	21.21%	|	30.85%	|	-2.66%	|	33
+|	Bollinger MA 100 30M	|	47,699	|	0.31%	|	2.40	|	64.01%	|	2.7%	|	-3.95%	|	389
+|	Bollinger MA 500 30M	|	14,757	|	0.73%	|	1.54	|	66.25%	|	4.44%	|	-6.54%	|	80
+|	MA 250&500 30M	|	1,684	|	0.51%	|	1.49	|	19.11%	|	10.3%	|	-1.8%	|	157
+|	Bollinger MA 100  2H	|	27,019	|	0.54%	|	1.38	|	64.77%	|	4.3%	|	-6.36%	|	88
+|	MA 25&50 5M	|	-25,697	|	0.0%	|	0.94	|	22.34%	|	0.96%	|	-0.27%	|	7255
+|	Bollinger MA 500 5M	|	-6,250	|	0.02%	|	0.94	|	59.85%	|	1.74%	|	-2.54%	|	543
+|	MA 25&50 30M	|	-40,279	|	0.01%	|	0.86	|	21.55%	|	2.61%	|	-0.7%	|	1151
+|	Bollinger MA 500 2H	|	-14,668	|	-1.74%	|	0.61	|	62.5%	|	8.2%	|	-18.3%	|	16
+|	MA 250&500 5M	|	-29,938	|	-0.06%	|	0.36	|	15.92%	|	2.73%	|	-0.59%	|	1300
+
+
+After sorting by gain for every $1 investment will focus on the top three result.  
+The MA 250 500 2H	 (moving average fast: 250, slow :500) on 2 hours time frame traded only 33 times so will leave it out for now.  
+We have too strategies, one that use MA and another that use bollinger. Its interesting too see that the MA strategy win only 21.21% of the times but when its win its win big. On the other hand the bollinger strategy win 64.01% of the time, but with an average gain of 2.7% per trade and loss of -3.95% per trade. 
+
+So the two strategyis are quite the opposate, one trades losts of lossers for small loss and big gains. The other, trade lots of winners for small gains and bigger losess. I usually prefer visulasation (charts) over dry numbers. 
+
+Bollinger             |  Moving Average Cross
+:-------------------------:|:-------------------------:
+![](/images/bollinger_hist_pct_change.png)  |  ![](/images/ma_hist_pct_change.png)
+
+
+
+ 
+
+
+And here is the MA strategy if we started in 2022: (made 15 cent on the dollar)
+
+
 
 
 ### What next
 I will deply the bot to the cloud and let it run live for maybe a week.  
 Than, I will write another blog with the result, see if there are any improvemnts to make and run it again.  
 Once I have some time I am planing to build a dashbord for anyone to see the result live.
+
+There is alos 
+Stay tund.
