@@ -16,7 +16,8 @@ As mentioned above, I am thinking of writing another blog post that will focus m
 For now, the idea is to focus on simplicity, but we still want our bot to have positive PnL. 
 The trading strategy will be very simple using two moving averages, fast and slow.
 1. Buy (long): when the market crosses above the fast moving average (fast MA), if the slow moving average (slow MA) is under the fast MA, use the slow MA as trailing stop.
-2. Sell (short): When the market breaks down (crosses under) the fast MA given that the slow MA is above the Fast MA. Use the slow MA as a trailing stop.   
+2. Sell (short): When the market breaks down (crosses under) the fast MA given that the slow MA is above the Fast MA. Use the slow MA as a trailing stop.  
+   
 In addition, we may use a limit (take profits) on both trading directions. For now we'll leave this part (limit) for later, perhaps we'll use it, perhaps not. We'll see.
 Our trading strategy will be based on trend following. The bot will likely have profitable trades when the market is trending, and lose money by taking lots of small losses when the market moves sideways. 
 *If the trading logic is not clear, just look at the charts showing trades down the road which you'll see on my blog.
@@ -105,6 +106,7 @@ for example here is the MA strategy for 2022:
 ![Return Over $1 invested in 2022](/images/1_dollar_invested_ma_2022.png)
 
 Now, compare both strategies:
+
 Bollinger: 
 ![](/images/1_dollar_invested_bollinger.png)
 
