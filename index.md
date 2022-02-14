@@ -1,5 +1,4 @@
-I like trading, coding and mostyl learning new things.
+I'm passionate about trading, coding and most of all learning new things.
 
-And really enjoying a challenge 
-
+I really enjoy a challenge and problem solving.
 
